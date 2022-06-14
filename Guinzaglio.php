@@ -15,6 +15,6 @@ class Guinzaglio extends Prodotto
 
 
     public function stampaInfo () {
-        return "$this->marca $this->tipologia € $this->prezzo Lunghezza : $this->lunghezza Materiale : $this->materiale";
+        return "<h4>$this->marca</h4>$this->tipologia<br>  € $this->prezzo<br>  Lunghezza : $this->lunghezza <br> Materiale : $this->materiale";
     }
 }

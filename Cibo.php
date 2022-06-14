@@ -2,7 +2,7 @@
 require_once __DIR__ . "/Prodotto.php";
 
 class Cibo extends Prodotto {
-    public $scadenza = 12/12/22;
+    public $scadenza = "12/12/22";
     public $proteina;
     public $grammatura;
 
@@ -14,7 +14,7 @@ class Cibo extends Prodotto {
     }
 
     public function stampaInfo () {
-        return "$this->marca $this->tipologia € $this->prezzo Tipo di carne : $this->proteina Grammi : $this->grammatura";
+        return "<h4>$this->marca</h4>$this->tipologia<br>€ $this->prezzo<br>Scadenza : $this->scadenza<br>Tipo di carne : $this->proteina<br>Grammi : $this->grammatura";
     }
 
 } 

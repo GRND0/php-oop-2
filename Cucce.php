@@ -15,6 +15,6 @@ class Cucce extends Prodotto
 
 
     public function stampaInfo () {
-        return "$this->marca $this->tipologia € $this->prezzo Dimensioni : $this->dimensioni Materiale : $this->materiale";
+        return "<h4>$this->marca</h4>$this->tipologia <br> € $this->prezzo<br>  Dimensioni : $this->dimensioni <br> Materiale : $this->materiale";
     }
 }
