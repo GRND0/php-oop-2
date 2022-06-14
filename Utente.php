@@ -21,7 +21,7 @@ class Utente
         $sconto = 20;
         $prezzo_totale = 0;
       
-        foreach ($this->carello as $articolo) {
+        foreach ($this->carrello as $articolo) {
             $prezzo_totale += $articolo->prezzo;
         }
 
