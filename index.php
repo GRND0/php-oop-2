@@ -38,13 +38,13 @@ $guinzaglio_pelle_l = new Guinzaglio("AnimalFriend", "Guinzaglio per Cani", 40, 
 $catalogo[] = $guinzaglio_pelle_l;
 
 
-$zefiro = new Utente("Zefiro", true);
+$zefiro = new Utente("Zefiro", true, 2022);
 $zefiro->aggiuntaCarrello($cibo_coniglio);
 $zefiro->aggiuntaCarrello($cibo_coniglio_l);
 $zefiro->aggiuntaCarrello($cibo_salmone);
 $zefiro->aggiuntaCarrello($cibo_pollo_l);
 
-$demetrio = new Utente("Demetrio", false);
+$demetrio = new Utente("Demetrio", false, 2025);
 $demetrio->aggiuntaCarrello($guinzaglio_nylon);
 $demetrio->aggiuntaCarrello($cuccia_legno_l);
 $demetrio->aggiuntaCarrello($cibo_coniglio_l);
@@ -68,14 +68,18 @@ $demetrio->aggiuntaCarrello($cibo_coniglio_l);
             <li> <?php echo $prodotto->stampaInfo(); ?> </li>
         <?php } ?>
     </ul>
+
+    
     <h2>Il tuo Carrello</h2>
     <ul>
-
         <?php foreach ($zefiro->carrello as $articoloCarrello) { ?>
             <li> <?php echo $articoloCarrello->stampaInfo(); ?> </li>
         <?php } ?>
     </ul>
     <h3>Totale: € <?php echo $zefiro->prezzo(); ?></h3>
+    <h4><?php echo $zefiro->controlloCarta(); ?></h4>
+
+
     <h2>Il tuo Carrello</h2>
     <ul>
 
@@ -84,6 +88,7 @@ $demetrio->aggiuntaCarrello($cibo_coniglio_l);
         <?php } ?>
     </ul>
     <h3>Totale: € <?php echo $demetrio->prezzo(); ?></h3>
+    <h4><?php echo $demetrio->controlloCarta(); ?></h4>
 
 </body>
 

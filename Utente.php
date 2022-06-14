@@ -3,13 +3,16 @@ class Utente
 {
     public $name;
     public $register;
+    public $anno;
     public $carrello = [];
 
 
-    function __construct($_name, $_register)
+    function __construct($_name, $_register, $_anno)
     {
         $this->name = $_name;
         $this->register = $_register;
+        $this->anno = $_anno;
+
     }
 
     function aggiuntaCarrello($_prodotto)
@@ -30,5 +33,14 @@ class Utente
         }
            
         return $prezzo_totale;
+    }
+
+    function controlloCarta() {
+        $anno_scadenza = 2025;
+        if ($this->anno < $anno_scadenza) {
+            return "Carta Valida!";
+        } else {
+            return "Carta Scaduta!";
+        }
     }
 }
