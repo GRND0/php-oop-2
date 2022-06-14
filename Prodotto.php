@@ -7,7 +7,7 @@ class Prodotto {
 
     function __construct($_marca, $_tipologia, $_prezzo) {
         $this->marca = $_marca;
-        $this->modello = $_tipologia;
+        $this->tipologia = $_tipologia;
         $this->prezzo = $_prezzo;
     }
 

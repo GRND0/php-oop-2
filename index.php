@@ -6,17 +6,17 @@ require_once __DIR__ . "/Utente.php";
 
 $catalogo = [];
 
-$cibo_salmone = new Cibo("Almanatura", "Cibo per gatti", 2, 50, "Salmone", "150 Gr");
+$cibo_salmone = new Cibo("Almanatura", "Cibo per gatti", 2.50, "Salmone", "150 Gr");
 $catalogo[] = $cibo_salmone ;
-$cibo_salmone_l = new Cibo("Almanatura", "Cibo per gatti", 4, 50, "Salmone", "300 Gr");
+$cibo_salmone_l = new Cibo("Almanatura", "Cibo per gatti", 4.50, "Salmone", "300 Gr");
 $catalogo[] = $cibo_salmone_l ;
-$cibo_pollo = new Cibo("Almanatura", "Cibo per gatti", 2, 50, "Pollo", "150 Gr");
+$cibo_pollo = new Cibo("Almanatura", "Cibo per gatti", 2.50, "Pollo", "150 Gr");
 $catalogo[] = $cibo_pollo ;
-$cibo_pollo_l = new Cibo("Almanatura", "Cibo per gatti", 4, 50, "Pollo", "300 Gr");
+$cibo_pollo_l = new Cibo("Almanatura", "Cibo per gatti", 4.50, "Pollo", "300 Gr");
 $catalogo[] = $cibo_pollo_l ;
-$cibo_coniglio = new Cibo("Almanatura", "Cibo per gatti", 2, 50, "Coniglio", "150 Gr");
+$cibo_coniglio = new Cibo("Almanatura", "Cibo per gatti", 2.50, "Coniglio", "150 Gr");
 $catalogo[] = $cibo_coniglio ;
-$cibo_coniglio_l = new Cibo("Almanatura", "Cibo per gatti", 4, 50, "Coniglio", "300 Gr");
+$cibo_coniglio_l = new Cibo("Almanatura", "Cibo per gatti", 4.50, "Coniglio", "300 Gr");
 $catalogo[] = $cibo_coniglio_l ;
 
 $cuccia_plastica = new Cucce("AnimalHouse", "Cuccia per Cani", 50, "100 x 50 cm", "Plastica");
@@ -36,6 +36,19 @@ $guinzaglio_pelle = new Guinzaglio("AnimalFriend", "Guinzaglio per Cani", 20, "1
 $catalogo[] = $guinzaglio_pelle ;
 $guinzaglio_pelle_l = new Guinzaglio("AnimalFriend", "Guinzaglio per Cani", 40, "3 m", "Pelle");
 $catalogo[] = $guinzaglio_pelle_l ;
+
+
+$zefiro = new Utente("Zefiro", true);
+$zefiro->aggiuntaCarrello($cibo_coniglio);
+$zefiro->aggiuntaCarrello($cibo_coniglio_l);
+$zefiro->aggiuntaCarrello($cibo_salmone);
+$zefiro->aggiuntaCarrello($cibo_pollo_l);
+
+$demetrio = new Utente("Demetrio", false);
+$zefiro->aggiuntaCarrello($guinzaglio_nylon);
+$zefiro->aggiuntaCarrello($cuccia_legno_l);
+$zefiro->aggiuntaCarrello($cibo_coniglio_l);
+
 ?>
 
 <!DOCTYPE html>
@@ -51,8 +64,8 @@ $catalogo[] = $guinzaglio_pelle_l ;
 <body>
     <h2>Prodotti disponibili</h2>
     <ul>
-        <?php foreach ($catalogo as $prodotti) { ?>
-        <li> <?php echo $prodotti->stampaInfo(); ?> </li>
+        <?php foreach ($catalogo as $prodotto) { ?>
+        <li> <?php echo $prodotto->stampaInfo(); ?> </li>
 <?php } ?>
     </ul>
 
